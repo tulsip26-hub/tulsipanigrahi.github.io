@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tulsi Panigrahi | Data Analyst & Business Analyst</title>
 
     <meta name="description"
-        content="Tulsi Panigrahi - Data Analyst and Business Analyst portfolio showcasing analytics, visualization, business intelligence and data-driven projects.">
+          content="Tulsi Panigrahi - Data Analyst and Business Analyst portfolio showcasing analytics, visualization, SQL, Python, Power BI and Tableau projects.">
 
     <style>
 
-        /* =========================
+        /* =====================================================
            GLOBAL
-        ========================= */
+        ===================================================== */
 
         * {
             margin: 0;
@@ -26,1366 +26,2344 @@
         }
 
         :root {
-            --primary: #6C4AB6;
-            --primary-dark: #4F2F91;
-            --accent: #8B5CF6;
-            --light-purple: #F3EEFF;
-            --lighter-purple: #FAF8FF;
+
+            --purple: #7C3AED;
+            --purple-dark: #5B21B6;
+            --violet: #8B5CF6;
+
+            --lavender: #EDE9FE;
+            --light-purple: #F5F3FF;
+
             --text: #1F1B2D;
-            --text-light: #625B71;
+            --muted: #6B6678;
+
             --white: #FFFFFF;
+
             --border: #E8E1F5;
-            --shadow: 0 10px 30px rgba(108, 74, 182, 0.10);
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #6D28D9,
+                    #7C3AED,
+                    #8B5CF6,
+                    #A855F7
+                );
+
+            --soft-gradient:
+                linear-gradient(
+                    135deg,
+                    #F5F3FF,
+                    #FFFFFF,
+                    #FAF5FF
+                );
+
+            --shadow:
+                0 15px 40px rgba(91, 33, 182, 0.10);
+
+            --shadow-hover:
+                0 20px 50px rgba(91, 33, 182, 0.18);
         }
+
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             background: var(--white);
+
             color: var(--text);
+
             line-height: 1.6;
+
+            overflow-x: hidden;
         }
 
+
         a {
+
             text-decoration: none;
+
             color: inherit;
         }
 
+
         section {
+
             padding: 100px 8%;
         }
 
+
         .container {
+
             max-width: 1200px;
+
             margin: auto;
         }
 
 
-        /* =========================
+
+        /* =====================================================
            NAVBAR
-        ========================= */
+        ===================================================== */
 
         nav {
+
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
+
             z-index: 1000;
+
+            background:
+                rgba(255,255,255,0.90);
+
+            backdrop-filter:
+                blur(15px);
+
+            border-bottom:
+                1px solid rgba(124,58,237,0.10);
         }
+
 
         .nav-container {
+
             max-width: 1200px;
+
             margin: auto;
-            padding: 18px 8%;
+
+            height: 75px;
+
+            padding: 0 25px;
+
             display: flex;
-            justify-content: space-between;
+
             align-items: center;
+
+            justify-content: space-between;
         }
+
 
         .logo {
-            font-size: 28px;
+
+            font-size: 26px;
+
             font-weight: 800;
-            color: var(--primary);
+
+            background:
+                var(--gradient);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color:
+                transparent;
         }
 
+
         .nav-links {
+
             display: flex;
-            gap: 30px;
+
+            gap: 28px;
+
             list-style: none;
         }
 
+
         .nav-links a {
-            font-size: 15px;
+
+            font-size: 14px;
+
             font-weight: 600;
-            color: var(--text);
+
+            color: #4B4656;
+
             transition: 0.3s;
         }
+
 
         .nav-links a:hover {
-            color: var(--primary);
+
+            color: var(--purple);
         }
 
 
-        /* =========================
+
+        /* =====================================================
            HERO
-        ========================= */
-
-        #home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 130px;
-            background:
-                radial-gradient(circle at 90% 10%,
-                rgba(139,92,246,0.10),
-                transparent 30%);
-        }
+        ===================================================== */
 
         .hero {
-            max-width: 1200px;
-            margin: auto;
-            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(139,92,246,0.15),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(124,58,237,0.08),
+                    transparent 30%
+                ),
+
+                #FFFFFF;
         }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,58,237,0.12),
+                    rgba(168,85,247,0.03)
+                );
+
+            filter: blur(30px);
+
+            top: -220px;
+
+            right: -150px;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(139,92,246,0.08);
+
+            filter: blur(40px);
+
+            bottom: -100px;
+
+            left: -80px;
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
 
         .hero-tag {
-            color: var(--primary);
-            font-size: 15px;
+
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            background:
+                var(--light-purple);
+
+            color:
+                var(--purple);
+
+            font-size: 13px;
+
             font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 18px;
+
+            margin-bottom: 25px;
+
+            border:
+                1px solid #DDD6FE;
         }
+
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 78px);
+
+            font-size:
+                clamp(50px, 7vw, 85px);
+
             line-height: 1.05;
+
             margin-bottom: 20px;
+
+            letter-spacing: -3px;
         }
 
-        .hero h1 span {
-            color: var(--primary);
+
+        .gradient-text {
+
+            background:
+                var(--gradient);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color:
+                transparent;
         }
+
 
         .hero h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #332B43;
+
+            font-size:
+                clamp(24px, 3vw, 36px);
+
+            margin-bottom: 22px;
         }
 
-        .hero p {
+
+        .hero-description {
+
             max-width: 700px;
+
             font-size: 18px;
-            color: var(--text-light);
-            margin-bottom: 32px;
+
+            color: var(--muted);
+
+            margin-bottom: 35px;
         }
+
 
         .hero-buttons {
+
             display: flex;
+
             gap: 15px;
+
             flex-wrap: wrap;
         }
+
 
         .btn {
-            padding: 14px 25px;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: 0.3s;
+
             display: inline-block;
+
+            padding: 14px 25px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            font-size: 14px;
+
+            transition: 0.3s;
         }
+
 
         .btn-primary {
-            background: var(--primary);
+
+            background:
+                var(--gradient);
+
             color: white;
+
+            box-shadow:
+                0 10px 25px
+                rgba(124,58,237,0.25);
         }
+
 
         .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(124,58,237,0.35);
         }
+
 
         .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: white;
+
+            border:
+                1.5px solid var(--purple);
+
+            color:
+                var(--purple);
+
+            background:
+                white;
         }
+
 
         .btn-outline:hover {
-            background: var(--light-purple);
-            transform: translateY(-3px);
+
+            background:
+                var(--light-purple);
+
+            transform:
+                translateY(-3px);
         }
 
 
-        /* =========================
+
+        /* =====================================================
            SECTION HEADINGS
-        ========================= */
+        ===================================================== */
 
         .section-label {
-            color: var(--primary);
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+
+            color:
+                var(--purple);
+
+            font-weight:
+                800;
+
+            font-size:
+                13px;
+
+            letter-spacing:
+                2px;
+
+            margin-bottom:
+                10px;
         }
+
 
         .section-title {
-            font-size: 42px;
-            margin-bottom: 15px;
+
+            font-size:
+                42px;
+
+            margin-bottom:
+                15px;
         }
+
 
         .section-description {
-            color: var(--text-light);
-            max-width: 700px;
-            margin-bottom: 45px;
+
+            max-width:
+                700px;
+
+            color:
+                var(--muted);
+
+            margin-bottom:
+                50px;
         }
 
 
-        /* =========================
+
+        /* =====================================================
            ABOUT
-        ========================= */
+        ===================================================== */
 
-        #about {
-            background: var(--lighter-purple);
+        .about {
+
+            background:
+                var(--soft-gradient);
         }
+
 
         .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                60px;
+
+            align-items:
+                center;
         }
+
 
         .about-text p {
-            color: var(--text-light);
-            margin-bottom: 18px;
-            font-size: 16px;
+
+            color:
+                var(--muted);
+
+            margin-bottom:
+                18px;
         }
+
 
         .about-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 35px;
-            box-shadow: var(--shadow);
+
+            background:
+                white;
+
+            padding:
+                35px;
+
+            border-radius:
+                20px;
+
+            border:
+                1px solid var(--border);
+
+            box-shadow:
+                var(--shadow);
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
         }
+
+
+        .about-card::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                150px;
+
+            height:
+                150px;
+
+            background:
+                var(--gradient);
+
+            border-radius:
+                50%;
+
+            top:
+                -80px;
+
+            right:
+                -70px;
+
+            opacity:
+                0.12;
+        }
+
 
         .about-card h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
 
-        .about-info {
-            display: grid;
-            gap: 16px;
-        }
-
-        .info-item strong {
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .info-item span {
-            color: var(--text-light);
+            margin-bottom:
+                20px;
         }
 
 
-        /* =========================
+        .about-list {
+
+            list-style:
+                none;
+        }
+
+
+        .about-list li {
+
+            padding:
+                11px 0;
+
+            border-bottom:
+                1px solid #EEEEEE;
+        }
+
+
+        .about-list strong {
+
+            color:
+                var(--purple);
+
+            margin-right:
+                8px;
+        }
+
+
+
+        /* =====================================================
            SKILLS
-        ========================= */
+        ===================================================== */
 
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                20px;
         }
+
 
         .skill-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 25px;
-            transition: 0.3s;
-            box-shadow: var(--shadow);
+
+            padding:
+                28px;
+
+            border-radius:
+                18px;
+
+            background:
+                white;
+
+            border:
+                1px solid var(--border);
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                0.3s;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
         }
+
+
+        .skill-card::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            top:
+                0;
+
+            left:
+                0;
+
+            width:
+                100%;
+
+            height:
+                4px;
+
+            background:
+                var(--gradient);
+        }
+
 
         .skill-card:hover {
-            transform: translateY(-7px);
-            border-color: var(--accent);
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                var(--shadow-hover);
         }
+
+
+        .skill-number {
+
+            color:
+                var(--purple);
+
+            font-weight:
+                800;
+
+            font-size:
+                13px;
+        }
+
 
         .skill-card h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 20px;
+
+            margin:
+                12px 0;
+
+            font-size:
+                20px;
         }
+
 
         .skill-card p {
-            color: var(--text-light);
-            font-size: 14px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
         }
 
 
-        /* =========================
+
+        /* =====================================================
            PROJECTS
-        ========================= */
+        ===================================================== */
 
-        #projects {
-            background: var(--lighter-purple);
+        .projects {
+
+            background:
+                #FAF9FF;
         }
+
 
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                25px;
         }
+
 
         .project-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 30px;
-            transition: 0.3s;
-            box-shadow: var(--shadow);
+
+            background:
+                white;
+
+            padding:
+                35px;
+
+            border-radius:
+                20px;
+
+            border:
+                1px solid var(--border);
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                0.3s;
+
+            position:
+                relative;
         }
+
 
         .project-card:hover {
-            transform: translateY(-7px);
-            border-color: var(--accent);
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                var(--shadow-hover);
         }
+
 
         .project-number {
-            color: var(--accent);
-            font-weight: 800;
-            font-size: 14px;
-            margin-bottom: 15px;
+
+            font-size:
+                13px;
+
+            font-weight:
+                800;
+
+            color:
+                var(--purple);
+
+            margin-bottom:
+                15px;
         }
+
 
         .project-card h3 {
-            font-size: 23px;
-            margin-bottom: 12px;
+
+            font-size:
+                24px;
+
+            margin-bottom:
+                15px;
         }
+
 
         .project-card p {
-            color: var(--text-light);
-            font-size: 15px;
-            margin-bottom: 18px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                15px;
+
+            margin-bottom:
+                20px;
         }
+
 
         .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                8px;
+
+            margin-bottom:
+                20px;
         }
+
 
         .project-tags span {
-            background: var(--light-purple);
-            color: var(--primary-dark);
-            padding: 6px 11px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
+
+            background:
+                var(--light-purple);
+
+            color:
+                var(--purple);
+
+            padding:
+                6px 10px;
+
+            border-radius:
+                20px;
+
+            font-size:
+                12px;
+
+            font-weight:
+                700;
         }
 
 
-        /* =========================
+        .project-link {
+
+            color:
+                var(--purple);
+
+            font-weight:
+                700;
+
+            font-size:
+                14px;
+
+            transition:
+                0.3s;
+        }
+
+
+        .project-link:hover {
+
+            color:
+                var(--purple-dark);
+
+            padding-left:
+                5px;
+        }
+
+
+
+        /* =====================================================
            EXPERIENCE
-        ========================= */
+        ===================================================== */
 
-        .timeline {
-            max-width: 850px;
-        }
+        .experience-container {
 
-        .timeline-item {
-            position: relative;
-            padding-left: 35px;
-            padding-bottom: 45px;
-            border-left: 2px solid var(--border);
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-        }
-
-        .timeline-item h3 {
-            font-size: 21px;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item h4 {
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .timeline-item p {
-            color: var(--text-light);
+            max-width:
+                900px;
         }
 
 
-        /* =========================
+        .experience-card {
+
+            background:
+                white;
+
+            border:
+                1px solid var(--border);
+
+            border-left:
+                5px solid var(--purple);
+
+            padding:
+                30px;
+
+            border-radius:
+                15px;
+
+            margin-bottom:
+                25px;
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                0.3s;
+        }
+
+
+        .experience-card:hover {
+
+            transform:
+                translateX(5px);
+
+            box-shadow:
+                var(--shadow-hover);
+        }
+
+
+        .experience-card h3 {
+
+            font-size:
+                22px;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .company {
+
+            color:
+                var(--purple);
+
+            font-weight:
+                700;
+        }
+
+
+        .date {
+
+            color:
+                #888;
+
+            font-size:
+                13px;
+
+            margin:
+                5px 0 15px;
+        }
+
+
+        .experience-card p {
+
+            color:
+                var(--muted);
+
+            margin-bottom:
+                18px;
+        }
+
+
+
+        /* =====================================================
            EDUCATION
-        ========================= */
+        ===================================================== */
 
-        #education {
-            background: var(--lighter-purple);
+        .education {
+
+            background:
+                var(--soft-gradient);
         }
 
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 25px;
-        }
 
         .education-card {
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
+
+            background:
+                white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                20px;
+
+            padding:
+                30px;
+
+            box-shadow:
+                var(--shadow);
+
+            margin-bottom:
+                20px;
+
+            transition:
+                0.3s;
         }
+
+
+        .education-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                var(--shadow-hover);
+        }
+
 
         .education-card h3 {
-            color: var(--primary);
-            margin-bottom: 8px;
+
+            margin-bottom:
+                8px;
         }
+
+
+        .education-card span {
+
+            color:
+                var(--purple);
+
+            font-weight:
+                700;
+
+            display:
+                block;
+
+            margin-bottom:
+                8px;
+        }
+
 
         .education-card p {
-            color: var(--text-light);
+
+            color:
+                var(--muted);
         }
 
 
-        /* =========================
-           CERTIFICATIONS
-        ========================= */
 
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 20px;
-        }
-
-        .cert-card {
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            background: white;
-            box-shadow: var(--shadow);
-        }
-
-        .cert-card h3 {
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .cert-card p {
-            color: var(--text-light);
-            font-size: 14px;
-        }
-
-
-        /* =========================
+        /* =====================================================
            CONTACT
-        ========================= */
+        ===================================================== */
 
-        #contact {
-            background: var(--primary);
-            color: white;
-        }
+        .contact {
 
-        #contact .section-label {
-            color: #DDD0FF;
-        }
+            text-align:
+                center;
 
-        #contact .section-description {
-            color: #E9E2F7;
-        }
+            background:
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(124,58,237,0.14),
+                    transparent 45%
+                ),
 
-        .contact-info {
-            display: grid;
-            gap: 20px;
-        }
-
-        .contact-item {
-            background: rgba(255,255,255,0.10);
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .contact-item strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .contact-item a {
-            color: #E7DDFF;
-        }
-
-        .contact-item a:hover {
-            color: white;
+                white;
         }
 
 
-        /* =========================
+        .contact-content {
+
+            max-width:
+                750px;
+
+            margin:
+                auto;
+        }
+
+
+        .contact-content p {
+
+            color:
+                var(--muted);
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .contact-buttons {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                15px;
+        }
+
+
+
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
-            text-align: center;
-            padding: 25px;
-            background: #392363;
-            color: #DDD0FF;
-            font-size: 14px;
+
+            background:
+                #171322;
+
+            color:
+                white;
+
+            padding:
+                30px 8%;
+
+            text-align:
+                center;
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
+        footer p {
+
+            font-size:
+                13px;
+
+            color:
+                #BCB6C9;
+        }
+
+
+        footer span {
+
+            color:
+                #A78BFA;
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
 
         @media (max-width: 900px) {
 
-            .nav-links {
-                gap: 12px;
-            }
-
-            .nav-links a {
-                font-size: 12px;
-            }
-
             .skills-grid {
-                grid-template-columns: repeat(2,1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
+
+            .about-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
 
             .projects-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .cert-grid {
-                grid-template-columns: 1fr 1fr;
+
+            .nav-links {
+
+                gap:
+                    15px;
             }
 
-            .about-grid,
-            .contact-grid,
-            .education-grid {
-                grid-template-columns: 1fr;
+
+            section {
+
+                padding:
+                    80px 6%;
             }
         }
 
 
         @media (max-width: 600px) {
 
-            section {
-                padding: 75px 6%;
-            }
-
             .nav-container {
-                padding: 15px 6%;
+
+                padding:
+                    0 15px;
             }
 
-            .logo {
-                font-size: 23px;
-            }
 
             .nav-links {
-                display: none;
+
+                display:
+                    none;
             }
+
+
+            .hero {
+
+                padding-top:
+                    120px;
+            }
+
 
             .hero h1 {
-                font-size: 48px;
+
+                font-size:
+                    52px;
             }
 
-            .hero h2 {
-                font-size: 22px;
+
+            .hero-description {
+
+                font-size:
+                    16px;
             }
 
-            .hero p {
-                font-size: 16px;
+
+            .skills-grid {
+
+                grid-template-columns:
+                    1fr;
             }
+
 
             .section-title {
-                font-size: 32px;
+
+                font-size:
+                    34px;
             }
 
-            .skills-grid,
-            .cert-grid {
-                grid-template-columns: 1fr;
+
+            .project-card {
+
+                padding:
+                    25px;
             }
+
+
+            .about-card {
+
+                padding:
+                    25px;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-    <nav>
+<nav>
 
-        <div class="nav-container">
+    <div class="nav-container">
 
-            <div class="logo">
-                TP.
-            </div>
-
-            <ul class="nav-links">
-
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-
-                <li>
-                    <a href="#about">About</a>
-                </li>
-
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
-
-                <li>
-                    <a href="#education">Education</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </nav>
+        <a href="#home" class="logo">
+            TP.
+        </a>
 
 
+        <ul class="nav-links">
 
-    <!-- =========================
-         HOME
-    ========================= -->
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
-    <section id="home">
+            <li>
+                <a href="#about">About</a>
+            </li>
 
-        <div class="hero">
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
 
             <div class="hero-tag">
                 DATA • ANALYTICS • BUSINESS
             </div>
 
+
             <h1>
-                Hi, I'm <span>Tulsi.</span>
+
+                Hi, I'm
+
+                <span class="gradient-text">
+                    Tulsi.
+                </span>
+
             </h1>
+
 
             <h2>
                 Data Analyst | Business Analyst
             </h2>
 
-            <p>
-                I turn complex data into clear insights, meaningful
-                visualizations and business decisions. I enjoy combining
-                analytics, technology and business thinking to solve
-                real-world problems.
+
+            <p class="hero-description">
+
+                I turn complex data into clear insights,
+                meaningful visualizations and business decisions.
+                I enjoy combining analytics, technology and
+                business thinking to solve real-world problems.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#projects" class="btn btn-primary">
+                <a href="#projects"
+                   class="btn btn-primary">
+
                     Explore My Work
+
                 </a>
 
-                <a href="#contact" class="btn btn-outline">
+
+                <a href="#contact"
+                   class="btn btn-outline">
+
                     Let's Connect
+
                 </a>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-    <section id="about">
+<section class="about" id="about">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-label">
-                01 — ABOUT
+        <div class="section-label">
+            01 — ABOUT
+        </div>
+
+
+        <h2 class="section-title">
+            Turning Data Into Decisions
+        </h2>
+
+
+        <p class="section-description">
+
+            I combine analytics, visualization and business
+            understanding to transform data into meaningful insights.
+
+        </p>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+                <p>
+
+                    I am a Data Analyst and Business Analyst
+                    focused on data-driven decision making,
+                    business intelligence and analytical
+                    problem solving.
+
+                </p>
+
+
+                <p>
+
+                    My technical toolkit includes Python, SQL,
+                    Excel, Power BI and Tableau. I enjoy exploring
+                    datasets, identifying patterns and building
+                    dashboards that communicate insights clearly.
+
+                </p>
+
+
+                <p>
+
+                    Alongside analytics, my freelance experience
+                    has helped me develop client communication,
+                    lead management, CRM and business operations
+                    skills.
+
+                </p>
+
             </div>
 
-            <h2 class="section-title">
-                About Me
-            </h2>
 
-            <p class="section-description">
-                An analytics-focused professional interested in turning
-                data into meaningful business insights.
-            </p>
+            <div class="about-card">
+
+                <h3>
+                    My Analytics Approach
+                </h3>
 
 
-            <div class="about-grid">
+                <ul class="about-list">
 
-                <div class="about-text">
+                    <li>
+                        <strong>01.</strong>
+                        Understand the business problem
+                    </li>
 
-                    <p>
-                        I am a Data Analyst and Business Analyst focused on
-                        data analysis, visualization, business intelligence
-                        and problem solving.
-                    </p>
+                    <li>
+                        <strong>02.</strong>
+                        Collect and clean the data
+                    </li>
 
-                    <p>
-                        My approach combines technical analytics skills with
-                        business thinking to understand problems, identify
-                        patterns and communicate actionable insights.
-                    </p>
+                    <li>
+                        <strong>03.</strong>
+                        Explore patterns and trends
+                    </li>
 
-                    <p>
-                        I enjoy working with Python, SQL, Excel, Power BI
-                        and Tableau to transform raw data into useful
-                        information for decision-making.
-                    </p>
+                    <li>
+                        <strong>04.</strong>
+                        Build meaningful visualizations
+                    </li>
 
-                </div>
+                    <li>
+                        <strong>05.</strong>
+                        Translate insights into decisions
+                    </li>
 
-
-                <div class="about-card">
-
-                    <h3>
-                        Quick Overview
-                    </h3>
-
-                    <div class="about-info">
-
-                        <div class="info-item">
-                            <strong>Focus</strong>
-                            <span>Data Analytics & Business Analysis</span>
-                        </div>
-
-                        <div class="info-item">
-                            <strong>Tools</strong>
-                            <span>Python • SQL • Excel • Power BI • Tableau</span>
-                        </div>
-
-                        <div class="info-item">
-                            <strong>Strengths</strong>
-                            <span>Data Visualization • EDA • Business Insights</span>
-                        </div>
-
-                        <div class="info-item">
-                            <strong>Interests</strong>
-                            <span>Analytics • BI • Strategy • Problem Solving</span>
-                        </div>
-
-                    </div>
-
-                </div>
+                </ul>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         SKILLS
-    ========================= -->
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
-    <section id="skills">
+<section id="skills">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-label">
-                02 — SKILLS
+        <div class="section-label">
+            02 — SKILLS
+        </div>
+
+
+        <h2 class="section-title">
+            My Analytics Toolkit
+        </h2>
+
+
+        <p class="section-description">
+
+            A combination of analytical, technical and
+            business skills used to transform data into
+            actionable insights.
+
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    01
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Pandas, NumPy, EDA, data cleaning,
+                    analysis and visualization.
+                </p>
+
             </div>
 
-            <h2 class="section-title">
-                My Analytics Toolkit
-            </h2>
 
-            <p class="section-description">
-                A combination of analytical, technical and business skills
-                used to transform data into actionable insights.
-            </p>
+            <div class="skill-card">
 
-
-            <div class="skills-grid">
-
-
-                <div class="skill-card">
-                    <h3>Python</h3>
-                    <p>
-                        Pandas, NumPy, EDA and data analysis.
-                    </p>
+                <div class="skill-number">
+                    02
                 </div>
 
+                <h3>
+                    SQL
+                </h3>
 
-                <div class="skill-card">
-                    <h3>SQL</h3>
-                    <p>
-                        Joins, CTEs, subqueries and window functions.
-                    </p>
+                <p>
+                    Joins, CTEs, subqueries, window functions
+                    and analytical queries.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    03
                 </div>
 
+                <h3>
+                    Power BI
+                </h3>
 
-                <div class="skill-card">
-                    <h3>Power BI</h3>
-                    <p>
-                        Interactive dashboards, DAX and business reporting.
-                    </p>
+                <p>
+                    Interactive dashboards, DAX,
+                    KPIs and business reporting.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    04
                 </div>
 
+                <h3>
+                    Tableau
+                </h3>
 
-                <div class="skill-card">
-                    <h3>Tableau</h3>
-                    <p>
-                        Data visualization, dashboards and storytelling.
-                    </p>
+                <p>
+                    Data visualization, dashboards,
+                    storytelling and insights.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    05
                 </div>
 
+                <h3>
+                    Excel
+                </h3>
 
-                <div class="skill-card">
-                    <h3>Excel</h3>
-                    <p>
-                        Data cleaning, analysis and reporting.
-                    </p>
+                <p>
+                    Data cleaning, formulas, pivot tables,
+                    analysis and reporting.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    06
                 </div>
 
+                <h3>
+                    Data Visualization
+                </h3>
 
-                <div class="skill-card">
-                    <h3>Data Visualization</h3>
-                    <p>
-                        KPI dashboards and insight-driven reporting.
-                    </p>
+                <p>
+                    KPI dashboards and insight-driven
+                    business reporting.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    07
                 </div>
 
+                <h3>
+                    Exploratory Data Analysis
+                </h3>
 
-                <div class="skill-card">
-                    <h3>EDA</h3>
-                    <p>
-                        Exploratory analysis and pattern identification.
-                    </p>
+                <p>
+                    Pattern identification, relationships,
+                    trends and statistical exploration.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    08
                 </div>
 
+                <h3>
+                    Business Analysis
+                </h3>
 
-                <div class="skill-card">
-                    <h3>Business Analysis</h3>
-                    <p>
-                        Problem solving, requirements and business insights.
-                    </p>
-                </div>
-
+                <p>
+                    Problem solving, client interaction,
+                    requirements and business insights.
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         PROJECTS
-    ========================= -->
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
-    <section id="projects">
+<section class="projects" id="projects">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-label">
-                03 — PROJECTS
+        <div class="section-label">
+            03 — PROJECTS
+        </div>
+
+
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
+
+
+        <p class="section-description">
+
+            Selected projects demonstrating my skills in
+            analytics, databases, visualization and
+            data-driven problem solving.
+
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+
+                <h3>
+                    Fintech Analytics Dashboard
+                </h3>
+
+
+                <p>
+
+                    Developed an interactive Tableau dashboard
+                    to analyze transaction performance, customer
+                    behavior, revenue, fraud and operational
+                    metrics across a fintech dataset.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Tableau</span>
+                    <span>Excel</span>
+                    <span>Data Analysis</span>
+                    <span>Visualization</span>
+
+                </div>
+
+
+                <a href="https://github.com/tulsip26-hub"
+                   target="_blank"
+                   class="project-link">
+
+                    View Project →
+
+                </a>
+
             </div>
 
-            <h2 class="section-title">
-                Featured Projects
-            </h2>
-
-            <p class="section-description">
-                Real-world analytics projects focused on data-driven
-                insights, visualization, business intelligence and
-                problem solving.
-            </p>
 
 
-            <div class="projects-grid">
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
 
 
-                <!-- PROJECT 1 -->
+                <h3>
+                    NexusPay – Digital Payment Platform
+                </h3>
 
-                <div class="project-card">
 
-                    <div class="project-number">
-                        PROJECT 01
-                    </div>
+                <p>
 
-                    <h3>
-                        Fintech Analytics Dashboard
-                    </h3>
+                    Designed a normalized relational database
+                    for a fintech platform managing customers,
+                    wallets, transactions, loans, insurance
+                    and customer satisfaction.
 
-                    <p>
-                        Developed an interactive Tableau dashboard to
-                        analyze transaction performance, customer behavior,
-                        revenue, fraud and operational metrics across a
-                        fintech dataset.
-                    </p>
+                </p>
 
-                    <div class="project-tags">
-                        <span>Tableau</span>
-                        <span>Excel</span>
-                        <span>Data Analysis</span>
-                    </div>
+
+                <div class="project-tags">
+
+                    <span>SQL</span>
+                    <span>RDBMS</span>
+                    <span>3NF</span>
+                    <span>Business Analysis</span>
 
                 </div>
 
 
-                <!-- PROJECT 2 -->
+                <a href="https://github.com/tulsip26-hub"
+                   target="_blank"
+                   class="project-link">
 
-                <div class="project-card">
+                    View Project →
 
-                    <div class="project-number">
-                        PROJECT 02
-                    </div>
-
-                    <h3>
-                        NexusPay – Digital Payment Platform
-                    </h3>
-
-                    <p>
-                        Designed a normalized RDBMS for a fintech platform
-                        covering customers, wallets, transactions, loans,
-                        insurance and related business operations.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>SQL</span>
-                        <span>Database</span>
-                        <span>3NF</span>
-                        <span>Business Analysis</span>
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 3 -->
-
-                <div class="project-card">
-
-                    <div class="project-number">
-                        PROJECT 03
-                    </div>
-
-                    <h3>
-                        Airline Database Management System
-                    </h3>
-
-                    <p>
-                        Designed a relational database for airline
-                        operations covering passengers, bookings,
-                        flights, routes and airports with analytical
-                        SQL queries.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>SQL</span>
-                        <span>Database Design</span>
-                        <span>Analytics</span>
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 4 -->
-
-                <div class="project-card">
-
-                    <div class="project-number">
-                        PROJECT 04
-                    </div>
-
-                    <h3>
-                        Air Quality Analysis
-                    </h3>
-
-                    <p>
-                        Performed exploratory data analysis on air quality
-                        data to identify trends, patterns, relationships
-                        and important environmental insights.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>EDA</span>
-                        <span>Visualization</span>
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 5 -->
-
-                <div class="project-card">
-
-                    <div class="project-number">
-                        PROJECT 05
-                    </div>
-
-                    <h3>
-                        Cement Strength Prediction
-                    </h3>
-
-                    <p>
-                        Built a machine learning workflow to analyze
-                        concrete composition and predict compressive
-                        strength using data preprocessing, exploratory
-                        analysis and predictive modeling.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Machine Learning</span>
-                        <span>EDA</span>
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 6 -->
-
-                <div class="project-card">
-
-                    <div class="project-number">
-                        PROJECT 06
-                    </div>
-
-                    <h3>
-                        Business Intelligence Dashboard
-                    </h3>
-
-                    <p>
-                        Created interactive dashboards to monitor KPIs,
-                        performance metrics and business trends for
-                        data-driven decision-making.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Power BI</span>
-                        <span>DAX</span>
-                        <span>Excel</span>
-                        <span>Dashboard</span>
-                    </div>
-
-                </div>
-
+                </a>
 
             </div>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+
+                <h3>
+                    Airline Database Management System
+                </h3>
+
+
+                <p>
+
+                    Designed a relational database for airline
+                    operations covering passengers, bookings,
+                    flights, routes and airports with analytical
+                    SQL queries.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>SQL</span>
+                    <span>Database Design</span>
+                    <span>Analytics</span>
+
+                </div>
+
+
+                <a href="https://github.com/tulsip26-hub"
+                   target="_blank"
+                   class="project-link">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 04
+                </div>
+
+
+                <h3>
+                    Air Quality Analysis
+                </h3>
+
+
+                <p>
+
+                    Performed exploratory data analysis on
+                    air quality data to identify trends,
+                    patterns, relationships and important
+                    environmental indicators.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                    <span>EDA</span>
+
+                </div>
+
+
+                <a href="https://github.com/tulsip26-hub"
+                   target="_blank"
+                   class="project-link">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 5 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 05
+                </div>
+
+
+                <h3>
+                    Cement Strength Prediction
+                </h3>
+
+
+                <p>
+
+                    Built a machine learning workflow to
+                    analyze concrete composition and predict
+                    compressive strength using preprocessing,
+                    exploratory analysis and predictive modeling.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+                    <span>Machine Learning</span>
+                    <span>EDA</span>
+
+                </div>
+
+
+                <a href="https://github.com/tulsip26-hub"
+                   target="_blank"
+                   class="project-link">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 6 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 06
+                </div>
+
+
+                <h3>
+                    Business Intelligence Dashboard
+                </h3>
+
+
+                <p>
+
+                    Created interactive dashboards to monitor
+                    KPIs, performance metrics and business trends
+                    for data-driven decision making.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Power BI</span>
+                    <span>DAX</span>
+                    <span>Excel</span>
+                    <span>Dashboard</span>
+
+                </div>
+
+
+                <a href="https://github.com/tulsip26-hub"
+                   target="_blank"
+                   class="project-link">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         EXPERIENCE
-    ========================= -->
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
 
-    <section id="experience">
+<section id="experience">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-label">
-                04 — EXPERIENCE
-            </div>
-
-            <h2 class="section-title">
-                Experience & Internships
-            </h2>
-
-            <p class="section-description">
-                Practical exposure across analytics, technology and
-                business-oriented problem solving.
-            </p>
+        <div class="section-label">
+            04 — EXPERIENCE
+        </div>
 
 
-            <div class="timeline">
+        <h2 class="section-title">
+            Experience & Professional Journey
+        </h2>
 
 
-                <div class="timeline-item">
+        <p class="section-description">
 
-                    <h3>
-                        Data Analytics Virtual Internship
-                    </h3>
+            Practical experience across freelancing,
+            client interaction, analytics and
+            business-oriented problem solving.
 
-                    <h4>
-                        Deloitte
-                    </h4>
+        </p>
 
-                    <p>
-                        Worked on data analytics tasks involving Excel,
-                        visualization and analytical problem solving.
-                    </p>
 
+        <div class="experience-container">
+
+
+            <!-- FREELANCE -->
+
+            <div class="experience-card">
+
+                <h3>
+                    Freelance Business & Client Operations
+                </h3>
+
+
+                <div class="company">
+                    Freelance
                 </div>
 
 
-                <div class="timeline-item">
-
-                    <h3>
-                        Technology Risk Virtual Internship
-                    </h3>
-
-                    <h4>
-                        EY
-                    </h4>
-
-                    <p>
-                        Gained exposure to technology risk, analytical
-                        thinking and business-focused problem solving.
-                    </p>
-
+                <div class="date">
+                    Freelance Experience
                 </div>
 
 
+                <p>
+
+                    Worked independently with clients,
+                    supporting lead management, client
+                    communication and business operations.
+                    Managed customer interactions, followed
+                    up on leads and supported the conversion
+                    process while maintaining professional
+                    client relationships.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Client Communication</span>
+                    <span>Lead Management</span>
+                    <span>CRM</span>
+                    <span>Business Operations</span>
+
+                </div>
+
             </div>
+
+
+
+            <!-- ANALYTICS -->
+
+            <div class="experience-card">
+
+                <h3>
+                    Data Analytics & Business Intelligence
+                </h3>
+
+
+                <div class="company">
+                    Projects & Practical Experience
+                </div>
+
+
+                <div class="date">
+                    Analytics Experience
+                </div>
+
+
+                <p>
+
+                    Worked on analytical projects involving
+                    SQL, Python, Excel, Power BI and Tableau.
+                    Focused on data cleaning, exploratory
+                    analysis, dashboard development and
+                    translating data into actionable
+                    business insights.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Power BI</span>
+                    <span>Tableau</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DELOITTE -->
+
+            <div class="experience-card">
+
+                <h3>
+                    Data Analytics Virtual Experience
+                </h3>
+
+
+                <div class="company">
+                    Deloitte
+                </div>
+
+
+                <div class="date">
+                    Data Analytics
+                </div>
+
+
+                <p>
+
+                    Worked on data analytics and visualization
+                    activities involving Excel and Tableau.
+                    Applied analytical thinking to interpret
+                    data and communicate meaningful business
+                    insights.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Excel</span>
+                    <span>Tableau</span>
+                    <span>Data Analytics</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EY -->
+
+            <div class="experience-card">
+
+                <h3>
+                    Technology Risk Virtual Experience
+                </h3>
+
+
+                <div class="company">
+                    EY
+                </div>
+
+
+                <div class="date">
+                    Technology & Business Analysis
+                </div>
+
+
+                <p>
+
+                    Gained exposure to technology risk,
+                    structured problem solving and analytical
+                    thinking within a business environment.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>Technology Risk</span>
+                    <span>Analysis</span>
+                    <span>Problem Solving</span>
+
+                </div>
+
+            </div>
+
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         EDUCATION
-    ========================= -->
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
 
-    <section id="education">
+<section class="education" id="education">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-label">
-                05 — EDUCATION
-            </div>
+        <div class="section-label">
+            05 — EDUCATION
+        </div>
 
-            <h2 class="section-title">
-                Education
-            </h2>
 
-            <p class="section-description">
-                Academic background combining commerce, analytics and
-                technology.
+        <h2 class="section-title">
+            Education
+        </h2>
+
+
+        <p class="section-description">
+
+            Academic background combining commerce,
+            analytics and technology.
+
+        </p>
+
+
+        <!-- MASTERS -->
+
+        <div class="education-card">
+
+            <h3>
+                Master's in Data Science & AI Analytics
+            </h3>
+
+
+            <span>
+                IT Vedant
+            </span>
+
+
+            <p>
+
+                Data Science, Python, SQL, Power BI,
+                Tableau, statistics, machine learning
+                and business analytics.
+
             </p>
-
-
-            <div class="education-grid">
-
-
-                <div class="education-card">
-
-                    <h3>
-                        Masters in Data Science & AI Analytics
-                    </h3>
-
-                    <p>
-                        IT Vedant
-                    </p>
-
-                    <p>
-                        Data Science • Analytics • Machine Learning
-                    </p>
-
-                </div>
-
-
-                <div class="education-card">
-
-                    <h3>
-                        Bachelor of Commerce
-                    </h3>
-
-                    <p>
-                        Somaiya University
-                    </p>
-
-                    <p>
-                        CGPA: 8.5
-                    </p>
-
-                </div>
-
-
-            </div>
 
         </div>
 
-    </section>
 
 
+        <!-- BCOM -->
 
-    <!-- =========================
-         CERTIFICATIONS
-    ========================= -->
+        <div class="education-card">
 
-    <section id="certifications">
+            <h3>
+                Bachelor of Commerce
+            </h3>
 
-        <div class="container">
 
-            <div class="section-label">
-                06 — CERTIFICATIONS
-            </div>
+            <span>
+                Somaiya University
+            </span>
 
-            <h2 class="section-title">
-                Certifications & Learning
-            </h2>
 
-            <p class="section-description">
-                Continuous learning across analytics, business intelligence
-                and technology.
+            <p>
+                CGPA: 8.5
             </p>
-
-
-            <div class="cert-grid">
-
-
-                <div class="cert-card">
-
-                    <h3>
-                        SQL Certification
-                    </h3>
-
-                    <p>
-                        SQL querying, relational databases and analytical
-                        SQL techniques.
-                    </p>
-
-                </div>
-
-
-                <div class="cert-card">
-
-                    <h3>
-                        Data Analytics
-                    </h3>
-
-                    <p>
-                        Data analysis, visualization and business
-                        intelligence.
-                    </p>
-
-                </div>
-
-
-                <div class="cert-card">
-
-                    <h3>
-                        Business Analytics
-                    </h3>
-
-                    <p>
-                        Analytical problem solving and data-driven
-                        decision making.
-                    </p>
-
-                </div>
-
-
-            </div>
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
-    <section id="contact">
+<section class="contact" id="contact">
 
-        <div class="container">
+    <div class="container">
+
+        <div class="contact-content">
 
             <div class="section-label">
-                07 — CONTACT
+                06 — CONTACT
             </div>
+
 
             <h2 class="section-title">
                 Let's Connect
             </h2>
 
-            <p class="section-description">
-                Interested in analytics, business intelligence,
-                data-driven problem solving or collaboration?
-                Let's connect.
+
+            <p>
+
+                Interested in analytics, business intelligence
+                or data-driven problem solving?
+                I'd love to connect and discuss opportunities.
+
             </p>
 
 
-            <div class="contact-grid">
+            <div class="contact-buttons">
 
 
-                <div class="contact-info">
+                <!-- EMAIL -->
 
-                    <div class="contact-item">
+                <a href="mailto:tulsipanigrahi26@gmail.com"
+                   class="btn btn-primary">
 
-                        <strong>Email</strong>
+                    Email Me
 
-                        <a href="mailto:YOUR_EMAIL@example.com">
-                            YOUR_EMAIL@example.com
-                        </a>
-
-                    </div>
+                </a>
 
 
-                    <div class="contact-item">
 
-                        <strong>LinkedIn</strong>
+                <!-- LINKEDIN -->
 
-                        <a href="YOUR_LINKEDIN_URL"
-                           target="_blank">
-                            View LinkedIn Profile
-                        </a>
+                <a href="https://www.linkedin.com/in/tulsi-panigrahi-400382286"
+                   target="_blank"
+                   class="btn btn-outline">
 
-                    </div>
+                    LinkedIn
+
+                </a>
 
 
-                    <div class="contact-item">
 
-                        <strong>GitHub</strong>
+                <!-- GITHUB -->
 
-                        <a href="https://github.com/tulsip26-hub"
-                           target="_blank">
-                            View GitHub Profile
-                        </a>
+                <a href="https://github.com/tulsip26-hub"
+                   target="_blank"
+                   class="btn btn-outline">
 
-                    </div>
+                    GitHub
 
-                </div>
+                </a>
 
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-    <footer>
+<footer>
 
-        © 2026 Tulsi Panigrahi.
-        Built with HTML & CSS.
+    <p>
 
-    </footer>
+        © 2026
+        <span>Tulsi Panigrahi</span>.
+
+        Built with data, curiosity & creativity.
+
+    </p>
+
+</footer>
 
 
 </body>
