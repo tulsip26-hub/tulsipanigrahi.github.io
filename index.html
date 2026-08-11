@@ -10,36 +10,31 @@
     <title>Tulsi Panigrahi | Data Analyst & Business Analyst</title>
 
     <meta name="description"
-          content="Tulsi Panigrahi - Data Analyst and Business Analyst portfolio showcasing analytics, visualization, SQL, Python, Power BI and Tableau projects.">
+        content="Tulsi Panigrahi - Data Analyst and Business Analyst portfolio showcasing Python, SQL, Power BI, Tableau, Excel and analytics projects.">
+
 
     <style>
 
         /* =====================================================
-           GLOBAL
+           GLOBAL VARIABLES
         ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
 
         :root {
 
             --purple: #7C3AED;
             --purple-dark: #5B21B6;
             --violet: #8B5CF6;
+            --lavender: #A78BFA;
 
-            --lavender: #EDE9FE;
             --light-purple: #F5F3FF;
+            --very-light-purple: #FAF8FF;
 
-            --text: #1F1B2D;
-            --muted: #6B6678;
+            --text: #211A2E;
+            --text-light: #686274;
 
             --white: #FFFFFF;
 
-            --border: #E8E1F5;
+            --border: rgba(124, 58, 237, 0.13);
 
             --gradient:
                 linear-gradient(
@@ -50,19 +45,42 @@
                     #A855F7
                 );
 
-            --soft-gradient:
+            --gradient-soft:
                 linear-gradient(
                     135deg,
-                    #F5F3FF,
                     #FFFFFF,
-                    #FAF5FF
+                    #F8F5FF,
+                    #F3EEFF
                 );
 
             --shadow:
-                0 15px 40px rgba(91, 33, 182, 0.10);
+                0 15px 45px rgba(91, 33, 182, 0.08);
 
             --shadow-hover:
-                0 20px 50px rgba(91, 33, 182, 0.18);
+                0 25px 65px rgba(91, 33, 182, 0.16);
+        }
+
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            scroll-behavior: smooth;
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
         }
 
 
@@ -73,13 +91,114 @@
                 Helvetica,
                 sans-serif;
 
-            background: var(--white);
-
             color: var(--text);
 
             line-height: 1.6;
 
             overflow-x: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(139, 92, 246, 0.12),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(168, 85, 247, 0.10),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(124, 58, 237, 0.08),
+                    transparent 30%
+                ),
+
+                #FFFFFF;
+        }
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -2;
+
+            pointer-events: none;
+
+            background-image:
+
+                radial-gradient(
+                    rgba(124, 58, 237, 0.13) 1px,
+                    transparent 1px
+                );
+
+            background-size: 32px 32px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 85%
+                );
+
+            opacity: 0.45;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 420px;
+
+            height: 420px;
+
+            border-radius: 50%;
+
+            right: -180px;
+
+            top: 35%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.16),
+                    rgba(139, 92, 246, 0.03),
+                    transparent 70%
+                );
+
+            filter: blur(20px);
+
+            z-index: -1;
+
+            pointer-events: none;
+
+            animation:
+                floatingGlow 8s ease-in-out infinite;
+        }
+
+
+        @keyframes floatingGlow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-35px);
+            }
         }
 
 
@@ -93,21 +212,26 @@
 
         section {
 
-            padding: 100px 8%;
+            padding:
+                110px 8%;
+
+            position: relative;
         }
 
 
         .container {
 
-            max-width: 1200px;
+            max-width:
+                1200px;
 
-            margin: auto;
+            margin:
+                auto;
         }
 
 
 
         /* =====================================================
-           NAVBAR
+           NAVIGATION
         ===================================================== */
 
         nav {
@@ -115,6 +239,7 @@
             position: fixed;
 
             top: 0;
+
             left: 0;
 
             width: 100%;
@@ -122,10 +247,13 @@
             z-index: 1000;
 
             background:
-                rgba(255,255,255,0.90);
+                rgba(255,255,255,0.82);
 
             backdrop-filter:
-                blur(15px);
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
 
             border-bottom:
                 1px solid rgba(124,58,237,0.10);
@@ -134,32 +262,42 @@
 
         .nav-container {
 
-            max-width: 1200px;
+            max-width:
+                1200px;
 
-            margin: auto;
+            margin:
+                auto;
 
-            height: 75px;
+            height:
+                75px;
 
-            padding: 0 25px;
+            padding:
+                0 25px;
 
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
+            align-items:
+                center;
 
-            justify-content: space-between;
+            justify-content:
+                space-between;
         }
 
 
         .logo {
 
-            font-size: 26px;
+            font-size:
+                27px;
 
-            font-weight: 800;
+            font-weight:
+                900;
 
             background:
                 var(--gradient);
 
-            -webkit-background-clip: text;
+            -webkit-background-clip:
+                text;
 
             -webkit-text-fill-color:
                 transparent;
@@ -168,29 +306,38 @@
 
         .nav-links {
 
-            display: flex;
+            display:
+                flex;
 
-            gap: 28px;
+            gap:
+                30px;
 
-            list-style: none;
+            list-style:
+                none;
         }
 
 
         .nav-links a {
 
-            font-size: 14px;
+            font-size:
+                14px;
 
-            font-weight: 600;
+            font-weight:
+                600;
 
-            color: #4B4656;
+            color:
+                #514B5D;
 
-            transition: 0.3s;
+            transition:
+                0.3s;
         }
 
 
         .nav-links a:hover {
 
-            color: var(--purple);
+            color:
+                var(--purple);
+
         }
 
 
@@ -201,31 +348,38 @@
 
         .hero {
 
-            min-height: 100vh;
+            min-height:
+                100vh;
 
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
+            align-items:
+                center;
 
-            position: relative;
-
-            overflow: hidden;
+            overflow:
+                hidden;
 
             background:
 
                 radial-gradient(
-                    circle at 85% 20%,
-                    rgba(139,92,246,0.15),
-                    transparent 30%
+                    circle at 75% 25%,
+                    rgba(139,92,246,0.19),
+                    transparent 26%
                 ),
 
                 radial-gradient(
-                    circle at 10% 80%,
-                    rgba(124,58,237,0.08),
-                    transparent 30%
+                    circle at 15% 80%,
+                    rgba(168,85,247,0.11),
+                    transparent 25%
                 ),
 
-                #FFFFFF;
+                linear-gradient(
+                    135deg,
+                    #FFFFFF 0%,
+                    #FBF9FF 50%,
+                    #F5F0FF 100%
+                );
         }
 
 
@@ -233,25 +387,37 @@
 
             content: "";
 
-            position: absolute;
+            position:
+                absolute;
 
-            width: 500px;
-            height: 500px;
+            width:
+                520px;
 
-            border-radius: 50%;
+            height:
+                520px;
+
+            border-radius:
+                50%;
 
             background:
+
                 linear-gradient(
                     135deg,
-                    rgba(124,58,237,0.12),
-                    rgba(168,85,247,0.03)
+                    rgba(124,58,237,0.18),
+                    rgba(168,85,247,0.02)
                 );
 
-            filter: blur(30px);
+            filter:
+                blur(38px);
 
-            top: -220px;
+            top:
+                -220px;
 
-            right: -150px;
+            right:
+                -130px;
+
+            animation:
+                heroFloat 7s ease-in-out infinite;
         }
 
 
@@ -259,69 +425,120 @@
 
             content: "";
 
-            position: absolute;
+            position:
+                absolute;
 
-            width: 250px;
-            height: 250px;
+            width:
+                320px;
 
-            border-radius: 50%;
+            height:
+                320px;
+
+            border-radius:
+                50%;
 
             background:
-                rgba(139,92,246,0.08);
 
-            filter: blur(40px);
+                radial-gradient(
+                    circle,
+                    rgba(124,58,237,0.13),
+                    transparent 70%
+                );
 
-            bottom: -100px;
+            filter:
+                blur(25px);
 
-            left: -80px;
+            bottom:
+                -120px;
+
+            left:
+                -100px;
+
+            animation:
+                heroFloat 9s ease-in-out infinite reverse;
+        }
+
+
+        @keyframes heroFloat {
+
+            0%,
+            100% {
+                transform:
+                    translate(0,0);
+            }
+
+            50% {
+                transform:
+                    translate(20px,-25px);
+            }
         }
 
 
         .hero-content {
 
-            max-width: 850px;
+            max-width:
+                850px;
 
-            position: relative;
+            position:
+                relative;
 
-            z-index: 2;
+            z-index:
+                2;
         }
 
 
         .hero-tag {
 
-            display: inline-block;
+            display:
+                inline-block;
 
-            padding: 8px 16px;
+            padding:
+                9px 17px;
 
-            border-radius: 30px;
+            border-radius:
+                30px;
 
             background:
-                var(--light-purple);
+                rgba(124,58,237,0.07);
 
             color:
                 var(--purple);
 
-            font-size: 13px;
-
-            font-weight: 700;
-
-            margin-bottom: 25px;
-
             border:
-                1px solid #DDD6FE;
+                1px solid
+                rgba(124,58,237,0.16);
+
+            font-size:
+                12px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.5px;
+
+            margin-bottom:
+                25px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(124,58,237,0.08);
         }
 
 
         .hero h1 {
 
             font-size:
-                clamp(50px, 7vw, 85px);
+                clamp(55px, 8vw, 92px);
 
-            line-height: 1.05;
+            line-height:
+                1;
 
-            margin-bottom: 20px;
+            margin-bottom:
+                20px;
 
-            letter-spacing: -3px;
+            letter-spacing:
+                -4px;
         }
 
 
@@ -330,7 +547,8 @@
             background:
                 var(--gradient);
 
-            -webkit-background-clip: text;
+            -webkit-background-clip:
+                text;
 
             -webkit-text-fill-color:
                 transparent;
@@ -342,45 +560,62 @@
             font-size:
                 clamp(24px, 3vw, 36px);
 
-            margin-bottom: 22px;
+            margin-bottom:
+                22px;
+
+            color:
+                #2B2437;
         }
 
 
         .hero-description {
 
-            max-width: 700px;
+            max-width:
+                720px;
 
-            font-size: 18px;
+            font-size:
+                18px;
 
-            color: var(--muted);
+            color:
+                var(--text-light);
 
-            margin-bottom: 35px;
+            margin-bottom:
+                35px;
         }
 
 
         .hero-buttons {
 
-            display: flex;
+            display:
+                flex;
 
-            gap: 15px;
+            gap:
+                15px;
 
-            flex-wrap: wrap;
+            flex-wrap:
+                wrap;
         }
 
 
         .btn {
 
-            display: inline-block;
+            display:
+                inline-block;
 
-            padding: 14px 25px;
+            padding:
+                14px 25px;
 
-            border-radius: 10px;
+            border-radius:
+                11px;
 
-            font-weight: 700;
+            font-weight:
+                700;
 
-            font-size: 14px;
+            font-size:
+                14px;
 
-            transition: 0.3s;
+            transition:
+                0.3s;
         }
 
 
@@ -389,35 +624,37 @@
             background:
                 var(--gradient);
 
-            color: white;
+            color:
+                white;
 
             box-shadow:
-                0 10px 25px
-                rgba(124,58,237,0.25);
+                0 12px 30px
+                rgba(124,58,237,0.27);
         }
 
 
         .btn-primary:hover {
 
             transform:
-                translateY(-3px);
+                translateY(-4px);
 
             box-shadow:
-                0 15px 35px
-                rgba(124,58,237,0.35);
+                0 18px 40px
+                rgba(124,58,237,0.38);
         }
 
 
         .btn-outline {
 
             border:
-                1.5px solid var(--purple);
+                1.5px solid
+                var(--purple);
 
             color:
                 var(--purple);
 
             background:
-                white;
+                rgba(255,255,255,0.7);
         }
 
 
@@ -427,7 +664,7 @@
                 var(--light-purple);
 
             transform:
-                translateY(-3px);
+                translateY(-4px);
         }
 
 
@@ -445,10 +682,10 @@
                 800;
 
             font-size:
-                13px;
+                12px;
 
             letter-spacing:
-                2px;
+                2.5px;
 
             margin-bottom:
                 10px;
@@ -458,7 +695,10 @@
         .section-title {
 
             font-size:
-                42px;
+                44px;
+
+            line-height:
+                1.2;
 
             margin-bottom:
                 15px;
@@ -471,10 +711,13 @@
                 700px;
 
             color:
-                var(--muted);
+                var(--text-light);
 
             margin-bottom:
                 50px;
+
+            font-size:
+                16px;
         }
 
 
@@ -486,7 +729,13 @@
         .about {
 
             background:
-                var(--soft-gradient);
+
+                linear-gradient(
+                    180deg,
+                    rgba(255,255,255,0.92),
+                    rgba(247,243,255,0.78),
+                    rgba(255,255,255,0.95)
+                );
         }
 
 
@@ -499,7 +748,7 @@
                 1fr 1fr;
 
             gap:
-                60px;
+                65px;
 
             align-items:
                 center;
@@ -509,26 +758,36 @@
         .about-text p {
 
             color:
-                var(--muted);
+                var(--text-light);
 
             margin-bottom:
                 18px;
+
+            font-size:
+                16px;
         }
 
 
         .about-card {
 
             background:
-                white;
+                rgba(255,255,255,0.76);
+
+            backdrop-filter:
+                blur(16px);
+
+            -webkit-backdrop-filter:
+                blur(16px);
 
             padding:
-                35px;
+                38px;
 
             border-radius:
-                20px;
+                24px;
 
             border:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             box-shadow:
                 var(--shadow);
@@ -550,25 +809,28 @@
                 absolute;
 
             width:
-                150px;
+                180px;
 
             height:
-                150px;
-
-            background:
-                var(--gradient);
+                180px;
 
             border-radius:
                 50%;
 
+            background:
+                var(--gradient);
+
             top:
-                -80px;
+                -100px;
 
             right:
-                -70px;
+                -80px;
 
             opacity:
-                0.12;
+                0.08;
+
+            filter:
+                blur(4px);
         }
 
 
@@ -576,6 +838,9 @@
 
             margin-bottom:
                 20px;
+
+            font-size:
+                23px;
         }
 
 
@@ -589,10 +854,14 @@
         .about-list li {
 
             padding:
-                11px 0;
+                12px 0;
 
             border-bottom:
-                1px solid #EEEEEE;
+                1px solid
+                rgba(0,0,0,0.06);
+
+            color:
+                var(--text-light);
         }
 
 
@@ -617,7 +886,7 @@
                 grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                repeat(4,1fr);
 
             gap:
                 20px;
@@ -627,22 +896,29 @@
         .skill-card {
 
             padding:
-                28px;
+                30px;
 
             border-radius:
-                18px;
+                20px;
 
             background:
-                white;
+                rgba(255,255,255,0.78);
+
+            backdrop-filter:
+                blur(14px);
+
+            -webkit-backdrop-filter:
+                blur(14px);
 
             border:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             box-shadow:
                 var(--shadow);
 
             transition:
-                0.3s;
+                0.35s;
 
             position:
                 relative;
@@ -677,13 +953,44 @@
         }
 
 
+        .skill-card::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                100px;
+
+            height:
+                100px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(139,92,246,0.08);
+
+            right:
+                -50px;
+
+            bottom:
+                -50px;
+        }
+
+
         .skill-card:hover {
 
             transform:
-                translateY(-8px);
+                translateY(-9px);
 
             box-shadow:
                 var(--shadow-hover);
+
+            border-color:
+                rgba(124,58,237,0.25);
         }
 
 
@@ -713,7 +1020,7 @@
         .skill-card p {
 
             color:
-                var(--muted);
+                var(--text-light);
 
             font-size:
                 14px;
@@ -728,7 +1035,13 @@
         .projects {
 
             background:
-                #FAF9FF;
+
+                linear-gradient(
+                    135deg,
+                    #FFFFFF 0%,
+                    #FAF7FF 45%,
+                    #F4EFFF 100%
+                );
         }
 
 
@@ -738,7 +1051,7 @@
                 grid;
 
             grid-template-columns:
-                repeat(2, 1fr);
+                repeat(2,1fr);
 
             gap:
                 25px;
@@ -748,45 +1061,93 @@
         .project-card {
 
             background:
-                white;
+                rgba(255,255,255,0.80);
+
+            backdrop-filter:
+                blur(16px);
+
+            -webkit-backdrop-filter:
+                blur(16px);
 
             padding:
                 35px;
 
             border-radius:
-                20px;
+                22px;
 
             border:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             box-shadow:
                 var(--shadow);
 
             transition:
-                0.3s;
+                0.35s;
 
             position:
                 relative;
+
+            overflow:
+                hidden;
+        }
+
+
+        .project-card::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                160px;
+
+            height:
+                160px;
+
+            border-radius:
+                50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.13),
+                    transparent 70%
+                );
+
+            top:
+                -90px;
+
+            right:
+                -70px;
         }
 
 
         .project-card:hover {
 
             transform:
-                translateY(-8px);
+                translateY(-9px);
 
             box-shadow:
                 var(--shadow-hover);
+
+            border-color:
+                rgba(124,58,237,0.25);
         }
 
 
         .project-number {
 
             font-size:
-                13px;
+                12px;
 
             font-weight:
                 800;
+
+            letter-spacing:
+                1.5px;
 
             color:
                 var(--purple);
@@ -799,7 +1160,7 @@
         .project-card h3 {
 
             font-size:
-                24px;
+                23px;
 
             margin-bottom:
                 15px;
@@ -809,7 +1170,7 @@
         .project-card p {
 
             color:
-                var(--muted);
+                var(--text-light);
 
             font-size:
                 15px;
@@ -838,22 +1199,26 @@
         .project-tags span {
 
             background:
-                var(--light-purple);
+                rgba(124,58,237,0.07);
 
             color:
                 var(--purple);
 
             padding:
-                6px 10px;
+                6px 11px;
 
             border-radius:
                 20px;
 
             font-size:
-                12px;
+                11px;
 
             font-weight:
                 700;
+
+            border:
+                1px solid
+                rgba(124,58,237,0.08);
         }
 
 
@@ -879,7 +1244,7 @@
                 var(--purple-dark);
 
             padding-left:
-                5px;
+                6px;
         }
 
 
@@ -898,19 +1263,27 @@
         .experience-card {
 
             background:
-                white;
+                rgba(255,255,255,0.80);
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
 
             border:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             border-left:
-                5px solid var(--purple);
+                5px solid
+                var(--purple);
 
             padding:
-                30px;
+                32px;
 
             border-radius:
-                15px;
+                18px;
 
             margin-bottom:
                 25px;
@@ -919,14 +1292,14 @@
                 var(--shadow);
 
             transition:
-                0.3s;
+                0.35s;
         }
 
 
         .experience-card:hover {
 
             transform:
-                translateX(5px);
+                translateX(7px);
 
             box-shadow:
                 var(--shadow-hover);
@@ -956,7 +1329,7 @@
         .date {
 
             color:
-                #888;
+                #8A8494;
 
             font-size:
                 13px;
@@ -969,7 +1342,7 @@
         .experience-card p {
 
             color:
-                var(--muted);
+                var(--text-light);
 
             margin-bottom:
                 18px;
@@ -984,17 +1357,29 @@
         .education {
 
             background:
-                var(--soft-gradient);
+
+                linear-gradient(
+                    180deg,
+                    #FFFFFF,
+                    #F8F4FF
+                );
         }
 
 
         .education-card {
 
             background:
-                white;
+                rgba(255,255,255,0.80);
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
 
             border:
-                1px solid var(--border);
+                1px solid
+                var(--border);
 
             border-radius:
                 20px;
@@ -1009,14 +1394,14 @@
                 20px;
 
             transition:
-                0.3s;
+                0.35s;
         }
 
 
         .education-card:hover {
 
             transform:
-                translateY(-5px);
+                translateY(-6px);
 
             box-shadow:
                 var(--shadow-hover);
@@ -1049,7 +1434,7 @@
         .education-card p {
 
             color:
-                var(--muted);
+                var(--text-light);
         }
 
 
@@ -1067,11 +1452,15 @@
 
                 radial-gradient(
                     circle at 50% 0%,
-                    rgba(124,58,237,0.14),
-                    transparent 45%
+                    rgba(124,58,237,0.16),
+                    transparent 42%
                 ),
 
-                white;
+                linear-gradient(
+                    180deg,
+                    #FBF9FF,
+                    #FFFFFF
+                );
         }
 
 
@@ -1088,7 +1477,7 @@
         .contact-content p {
 
             color:
-                var(--muted);
+                var(--text-light);
 
             margin-bottom:
                 30px;
@@ -1154,12 +1543,12 @@
            RESPONSIVE
         ===================================================== */
 
-        @media (max-width: 900px) {
+        @media (max-width: 950px) {
 
             .skills-grid {
 
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2,1fr);
             }
 
 
@@ -1175,29 +1564,15 @@
                 grid-template-columns:
                     1fr;
             }
+        }
 
 
-            .nav-links {
-
-                gap:
-                    15px;
-            }
-
+        @media (max-width: 650px) {
 
             section {
 
                 padding:
-                    80px 6%;
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            .nav-container {
-
-                padding:
-                    0 15px;
+                    85px 6%;
             }
 
 
@@ -1218,7 +1593,17 @@
             .hero h1 {
 
                 font-size:
-                    52px;
+                    54px;
+
+                letter-spacing:
+                    -3px;
+            }
+
+
+            .hero h2 {
+
+                font-size:
+                    25px;
             }
 
 
@@ -1239,18 +1624,25 @@
             .section-title {
 
                 font-size:
-                    34px;
+                    35px;
             }
 
 
             .project-card {
 
                 padding:
-                    25px;
+                    27px;
             }
 
 
             .about-card {
+
+                padding:
+                    27px;
+            }
+
+
+            .experience-card {
 
                 padding:
                     25px;
@@ -1267,7 +1659,7 @@
 
 
 <!-- =====================================================
-     NAVIGATION
+     NAVBAR
 ===================================================== -->
 
 <nav>
@@ -1352,8 +1744,8 @@
 
                 I turn complex data into clear insights,
                 meaningful visualizations and business decisions.
-                I enjoy combining analytics, technology and
-                business thinking to solve real-world problems.
+                I combine analytical thinking, technology and
+                business understanding to solve real-world problems.
 
             </p>
 
@@ -1530,9 +1922,7 @@
                     01
                 </div>
 
-                <h3>
-                    Python
-                </h3>
+                <h3>Python</h3>
 
                 <p>
                     Pandas, NumPy, EDA, data cleaning,
@@ -1548,9 +1938,7 @@
                     02
                 </div>
 
-                <h3>
-                    SQL
-                </h3>
+                <h3>SQL</h3>
 
                 <p>
                     Joins, CTEs, subqueries, window functions
@@ -1566,9 +1954,7 @@
                     03
                 </div>
 
-                <h3>
-                    Power BI
-                </h3>
+                <h3>Power BI</h3>
 
                 <p>
                     Interactive dashboards, DAX,
@@ -1584,9 +1970,7 @@
                     04
                 </div>
 
-                <h3>
-                    Tableau
-                </h3>
+                <h3>Tableau</h3>
 
                 <p>
                     Data visualization, dashboards,
@@ -1602,9 +1986,7 @@
                     05
                 </div>
 
-                <h3>
-                    Excel
-                </h3>
+                <h3>Excel</h3>
 
                 <p>
                     Data cleaning, formulas, pivot tables,
@@ -1620,9 +2002,7 @@
                     06
                 </div>
 
-                <h3>
-                    Data Visualization
-                </h3>
+                <h3>Data Visualization</h3>
 
                 <p>
                     KPI dashboards and insight-driven
@@ -1638,9 +2018,7 @@
                     07
                 </div>
 
-                <h3>
-                    Exploratory Data Analysis
-                </h3>
+                <h3>Exploratory Data Analysis</h3>
 
                 <p>
                     Pattern identification, relationships,
@@ -1656,9 +2034,7 @@
                     08
                 </div>
 
-                <h3>
-                    Business Analysis
-                </h3>
+                <h3>Business Analysis</h3>
 
                 <p>
                     Problem solving, client interaction,
@@ -1713,11 +2089,9 @@
                     PROJECT 01
                 </div>
 
-
                 <h3>
                     Fintech Analytics Dashboard
                 </h3>
-
 
                 <p>
 
@@ -1728,7 +2102,6 @@
 
                 </p>
 
-
                 <div class="project-tags">
 
                     <span>Tableau</span>
@@ -1737,7 +2110,6 @@
                     <span>Visualization</span>
 
                 </div>
-
 
                 <a href="https://github.com/tulsip26-hub"
                    target="_blank"
@@ -1759,11 +2131,9 @@
                     PROJECT 02
                 </div>
 
-
                 <h3>
                     NexusPay – Digital Payment Platform
                 </h3>
-
 
                 <p>
 
@@ -1774,7 +2144,6 @@
 
                 </p>
 
-
                 <div class="project-tags">
 
                     <span>SQL</span>
@@ -1783,7 +2152,6 @@
                     <span>Business Analysis</span>
 
                 </div>
-
 
                 <a href="https://github.com/tulsip26-hub"
                    target="_blank"
@@ -1805,11 +2173,9 @@
                     PROJECT 03
                 </div>
 
-
                 <h3>
                     Airline Database Management System
                 </h3>
-
 
                 <p>
 
@@ -1820,7 +2186,6 @@
 
                 </p>
 
-
                 <div class="project-tags">
 
                     <span>SQL</span>
@@ -1828,7 +2193,6 @@
                     <span>Analytics</span>
 
                 </div>
-
 
                 <a href="https://github.com/tulsip26-hub"
                    target="_blank"
@@ -1850,11 +2214,9 @@
                     PROJECT 04
                 </div>
 
-
                 <h3>
                     Air Quality Analysis
                 </h3>
-
 
                 <p>
 
@@ -1865,7 +2227,6 @@
 
                 </p>
 
-
                 <div class="project-tags">
 
                     <span>Python</span>
@@ -1874,7 +2235,6 @@
                     <span>EDA</span>
 
                 </div>
-
 
                 <a href="https://github.com/tulsip26-hub"
                    target="_blank"
@@ -1896,11 +2256,9 @@
                     PROJECT 05
                 </div>
 
-
                 <h3>
                     Cement Strength Prediction
                 </h3>
-
 
                 <p>
 
@@ -1911,7 +2269,6 @@
 
                 </p>
 
-
                 <div class="project-tags">
 
                     <span>Python</span>
@@ -1919,7 +2276,6 @@
                     <span>EDA</span>
 
                 </div>
-
 
                 <a href="https://github.com/tulsip26-hub"
                    target="_blank"
@@ -1941,11 +2297,9 @@
                     PROJECT 06
                 </div>
 
-
                 <h3>
                     Business Intelligence Dashboard
                 </h3>
-
 
                 <p>
 
@@ -1954,7 +2308,6 @@
                     for data-driven decision making.
 
                 </p>
-
 
                 <div class="project-tags">
 
@@ -1965,7 +2318,6 @@
 
                 </div>
 
-
                 <a href="https://github.com/tulsip26-hub"
                    target="_blank"
                    class="project-link">
@@ -1975,7 +2327,6 @@
                 </a>
 
             </div>
-
 
         </div>
 
@@ -2023,16 +2374,13 @@
                     Freelance Business & Client Operations
                 </h3>
 
-
                 <div class="company">
                     Freelance
                 </div>
 
-
                 <div class="date">
                     Freelance Experience
                 </div>
-
 
                 <p>
 
@@ -2045,7 +2393,6 @@
                     client relationships.
 
                 </p>
-
 
                 <div class="project-tags">
 
@@ -2068,16 +2415,13 @@
                     Data Analytics & Business Intelligence
                 </h3>
 
-
                 <div class="company">
                     Projects & Practical Experience
                 </div>
 
-
                 <div class="date">
                     Analytics Experience
                 </div>
-
 
                 <p>
 
@@ -2089,7 +2433,6 @@
                     business insights.
 
                 </p>
-
 
                 <div class="project-tags">
 
@@ -2112,16 +2455,13 @@
                     Data Analytics Virtual Experience
                 </h3>
 
-
                 <div class="company">
                     Deloitte
                 </div>
 
-
                 <div class="date">
                     Data Analytics
                 </div>
-
 
                 <p>
 
@@ -2132,7 +2472,6 @@
                     insights.
 
                 </p>
-
 
                 <div class="project-tags">
 
@@ -2154,16 +2493,13 @@
                     Technology Risk Virtual Experience
                 </h3>
 
-
                 <div class="company">
                     EY
                 </div>
 
-
                 <div class="date">
                     Technology & Business Analysis
                 </div>
-
 
                 <p>
 
@@ -2172,7 +2508,6 @@
                     thinking within a business environment.
 
                 </p>
-
 
                 <div class="project-tags">
 
@@ -2183,7 +2518,6 @@
                 </div>
 
             </div>
-
 
         </div>
 
@@ -2219,19 +2553,15 @@
         </p>
 
 
-        <!-- MASTERS -->
-
         <div class="education-card">
 
             <h3>
                 Master's in Data Science & AI Analytics
             </h3>
 
-
             <span>
                 IT Vedant
             </span>
-
 
             <p>
 
@@ -2244,27 +2574,21 @@
         </div>
 
 
-
-        <!-- BCOM -->
-
         <div class="education-card">
 
             <h3>
                 Bachelor of Commerce
             </h3>
 
-
             <span>
                 Somaiya University
             </span>
-
 
             <p>
                 CGPA: 8.5
             </p>
 
         </div>
-
 
     </div>
 
@@ -2304,8 +2628,6 @@
             <div class="contact-buttons">
 
 
-                <!-- EMAIL -->
-
                 <a href="mailto:tulsipanigrahi26@gmail.com"
                    class="btn btn-primary">
 
@@ -2313,9 +2635,6 @@
 
                 </a>
 
-
-
-                <!-- LINKEDIN -->
 
                 <a href="https://www.linkedin.com/in/tulsi-panigrahi-400382286"
                    target="_blank"
@@ -2326,9 +2645,6 @@
                 </a>
 
 
-
-                <!-- GITHUB -->
-
                 <a href="https://github.com/tulsip26-hub"
                    target="_blank"
                    class="btn btn-outline">
@@ -2336,7 +2652,6 @@
                     GitHub
 
                 </a>
-
 
             </div>
 
